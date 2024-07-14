@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "gdb",
+            "request": "attach",
+            "name": "Attach asm01",
+            "executable": "kernel.elf",
+            "gdbpath": "gdb-multiarch",
+            "target": "localhost:1234",
+            "remote": true,
+            "cwd": "${workspaceRoot}/asm01",
+            "valuesFormatting": "parseText",
+            "autorun": [
+                "set output-radix 16",
+                "interrupt"
+            ],
+        },
+        {
+            "type": "gdb",
+            "request": "attach",
+            "name": "Attach myTerm",
+            "executable": "kernel.elf",
+            "gdbpath": "gdb-multiarch",
+            "target": "localhost:1234",
+            "remote": true,
+            "cwd": "${workspaceRoot}/myTerm",
+            "valuesFormatting": "parseText",
+            "autorun": [
+                "set output-radix 16", // for hex display in debugger
+                "interrupt"
+            ],
+        }
+    ]
+}
